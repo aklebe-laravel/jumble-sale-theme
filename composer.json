@@ -1,0 +1,13 @@
+{
+  "name": "aklebe-laravel/jumble-sale-theme",
+  "type": "laravel-theme",
+  "description": "Jumble Sale Market Theme",
+  "authors": [
+    {
+      "name": "Andreas Klebe",
+      "email": "a.klebe.work@gmail.com"
+    }
+  ],
+  "require": {
+  }
+}

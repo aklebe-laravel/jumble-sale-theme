@@ -1,0 +1,8 @@
+{
+  "name": "jumble_sale",
+  "title": "JumbleSale",
+  "description": "Jumble Sale Market",
+  "author": "Andreas Klebe",
+  "version": "1.0.0",
+  "parent": "aklebe_bs5"
+}
