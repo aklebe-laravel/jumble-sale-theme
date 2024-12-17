@@ -34,7 +34,7 @@
     @livewireStyles
 
     {{--Where to place the translations for javascript? Have to be before init of jumbleSale/messageBox--}}
-    <script>
+    <script type="text/javascript">
         var appData = {!! app('php_to_js')->toJson() !!};
         var translations = {!! $_trans !!};
         var currentLocale = '{{ $_currentLocale }}';
