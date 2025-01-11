@@ -1,6 +1,8 @@
 @php
 
-    use Illuminate\Support\Facades\Auth;use Modules\Acl\app\Services\UserService;
+    use Illuminate\Support\Facades\Auth;
+    use Modules\Acl\app\Models\AclResource;
+    use Modules\Acl\app\Services\UserService;
 
     /** @var UserService $userService */
     $userService = app(UserService::class);
@@ -11,13 +13,13 @@ $testUsers = [];
 if ($userService->hasUserResource(Auth::user(), 'tester')) {
     $testUsers = app(\App\Models\User::class)::with(['aclGroups.aclResources'])
     ->whereHas('aclGroups.aclResources', function ($query) {
-        return $query->where('code', '=', 'puppet');
+        return $query->where('code', '=', AclResource::RES_NON_HUMAN);
     })
     ->whereHas('aclGroups.aclResources', function ($query) {
-        return $query->where('code', '=', 'trader');
+        return $query->where('code', '=', AclResource::RES_TRADER);
     })
     ->whereDoesntHave('aclGroups.aclResources', function ($query) {
-        return $query->where('code', '=', 'admin');
+        return $query->where('code', '=', AclResource::RES_ADMIN);
     })
     ->orderBy('last_visited_at', 'ASC')->limit(5)->get();
 }
