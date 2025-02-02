@@ -10,7 +10,7 @@
     $navigation = app('website_base_settings')->getNavigation();
 
 $testUsers = [];
-if ($userService->hasUserResource(Auth::user(), 'tester')) {
+if ($userService->hasUserResource(Auth::user(), AclResource::RES_TESTER)) {
     $testUsers = app(\App\Models\User::class)::with(['aclGroups.aclResources'])
     ->whereHas('aclGroups.aclResources', function ($query) {
         return $query->where('code', '=', AclResource::RES_NON_HUMAN);
