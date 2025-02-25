@@ -93,7 +93,7 @@ if ($userService->hasUserResource(Auth::user(), AclResource::RES_TESTER)) {
                                     <ul class="dropdown-menu" aria-labelledby="navbarHeaderProfile">
                                         @if (Auth::check())
                                             <li class="nav-item">
-                                                <a class="nav-link text-success" aria-current="page" href="{{ route('user-profile') }}">{{ __('UserProfile') }}</a>
+                                                <a class="nav-link text-success user-profile" dusk="user-profile" aria-current="page" href="{{ route('user-profile') }}">{{ __('UserProfile') }}</a>
                                             </li>
                                             @foreach($testUsers as $testUser)
                                                 <li class="nav-item">
