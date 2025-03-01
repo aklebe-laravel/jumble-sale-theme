@@ -4,7 +4,7 @@
     /** @var Offer $offer */
 
     $urlToOffer = route('manage-data', ['modelName' => 'Offer', 'modelId' => $offer->shared_id]);
-    $urlToTargetUser = route('user-profile', ['id' => $offer->addressedToUser->shared_id]);
+    $urlToTargetUser = $offer->addressedToUser->getFrontendLink();
 @endphp
 <html lang="de">
     <header>
