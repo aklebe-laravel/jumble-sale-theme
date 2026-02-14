@@ -29,7 +29,7 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     {{--        <link rel="icon" href="{{ themes('images/icons8-online-shop-48.png') }}">--}}
-    <link rel="icon" href="{{ themes('images/icons8-market-64.png') }}">
+    <link rel="icon" href="{{ \Modules\SystemBase\app\Services\ThemeService::getAssetUrl('assets/images/icons8-market-64.png') }}">
 
     @livewireStyles
 
