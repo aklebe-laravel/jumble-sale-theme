@@ -4,7 +4,7 @@
     /** @var Offer $offer */
 
     $urlToOffer = route('manage-data', ['modelName' => 'Offer', 'modelId' => $offer->shared_id]);
-    $urlToTargetUser = route('user-profile', ['id' => $offer->addressedToUser->shared_id]);
+    $urlToTargetUser = $offer->addressedToUser->getFrontendLink();
 @endphp
 {{--telegram HTML mode supports: <b></b>, <i></i>, <s></s>, <u></u>--}}
 <b>{{ __('Hello :name', ['name' => $offer->createdByUser->name]) }}</b>

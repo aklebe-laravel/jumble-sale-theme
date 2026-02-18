@@ -5,13 +5,13 @@
 @else
     @if($navItem->children)
         <li class="nav-item dropdown" id="main-{{ $navItem->attributes['id'] }}">
-            <button class="nav-link dropdown-toggle" role="button"
+            <button class="text-start nav-link dropdown-toggle w-100" role="button"
                     data-bs-toggle="dropdown" data-bs-auto-close="outside"
                     aria-expanded="false">
                 @if($navItem->attributes['icon_class'] ?? null)
                     <span class="{{ trim($navItem->attributes['icon_class']) }}"></span>
                 @endif
-                {{ __($navItem->title) }}
+                <span class="">{{ __($navItem->title) }}</span>
             </button>
             <ul class="dropdown-menu">
                 @foreach($navItem->children as $child2)

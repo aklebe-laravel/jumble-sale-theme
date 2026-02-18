@@ -4,7 +4,7 @@
     /** @var Offer $offer */
 
     $urlToOffer = route('manage-data', ['modelName' => 'Offer', 'modelId' => $offer->shared_id]);
-    $urlToCreator = route('user-profile', ['id' => $offer->createdByUser->shared_id]);
+    $urlToCreator = $offer->createdByUser->getUserProfileLink();
 @endphp
 <html lang="de">
     <header>
